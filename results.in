@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Search</title>
+</head>
+
+<body>
+
+<h2>Registration Search</h2>
+
+<input type="text" id="regno" placeholder="Enter Registration Number">
+<button onclick="searchData()">Search</button>
+
+<br><br>
+
+<table border="1">
+<thead>
+<tr>
+<th>Name</th>
+<th>Registration Number</th>
+<th>Post Joining Score</th>
+</tr>
+</thead>
+
+<tbody id="result"></tbody>
+
+</table>
+
+<script>
+
+var data = [
+{ name:"RAVI Kumar", reg:"24384E249BB235", score:"85 POST MUNGERE (ABPM)"  },
+{ name:"Amit Kumar", reg:"102", score:"90" },
+{ name:"Ravi Kumar", reg:"103", score:"78" }
+];
+
+function searchData(){
+
+var regno = document.getElementById("regno").value;
+var result = "";
+
+for(var i=0;i<data.length;i++){
+
+if(data[i].reg == regno){
+
+result += "<tr>";
+result += "<td>"+data[i].name+"</td>";
+result += "<td>"+data[i].reg+"</td>";
+result += "<td>"+data[i].score+"</td>";
+result += "</tr>";
+
+}
+
+}
+
+document.getElementById("result").innerHTML = result;
+
+}
+
+</script>
+
+</body>
+</html>
